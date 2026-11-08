@@ -306,7 +306,7 @@ const Stops = {
     const n = Math.max(1, this.names.length - 1);
     gsap.to('.pager .ring circle', { strokeDashoffset: 100 - (100 * this.cur) / n, duration: 0.8, ease: 'power2.inOut' });
     history.replaceState(null, '', '#' + this.names[this.cur]);
-    // Crowded sections ask the dock to shrink to the current chapter.
+    // Every chapter remains visible for direct navigation, including crowded scenes.
     const sc = $$('.scene')[this.cur];
     const dock = $('.dock');
     if (dock) {
@@ -317,8 +317,6 @@ const Stops = {
         on ? a.setAttribute('aria-current', 'page') : a.removeAttribute('aria-current');
       });
     }
-    document.documentElement.classList.toggle('dock-min', !!sc && sc.dataset.dock === 'min');
-    document.documentElement.classList.remove('dock-open');
     // Pages with their own progress UI (case file steps, diary countdown) follow the current stop.
     document.dispatchEvent(new CustomEvent('stop', { detail: { i: this.cur, name: this.names[this.cur], scene: sc } }));
   },
@@ -536,14 +534,6 @@ const Lightbox = {
 
 /* ---------- Links: in-page stops, other pages (with the wipe), unbuilt pages ---------- */
 function wireLinks() {
-  // A shrunk dock opens on the first tap instead of navigating; a tap elsewhere closes it.
-  document.addEventListener('click', (e) => {
-    const root = document.documentElement;
-    if (!root.classList.contains('dock-min')) return;
-    if (e.target.closest('.dock') && !root.classList.contains('dock-open')) {
-      e.preventDefault(); e.stopImmediatePropagation(); root.classList.add('dock-open');
-    } else if (!e.target.closest('.dock')) root.classList.remove('dock-open');
-  }, true);
   document.addEventListener('click', (e) => {
     const a = e.target.closest('[data-stop], [data-href], [data-soon]');
     if (!a) return;

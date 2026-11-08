@@ -13,11 +13,21 @@ html, body { background: #f8f7f5; }
 .s-actives .chips { margin-top: calc(var(--u) * 1.8); }
 .hint { bottom: calc(var(--u) * 9); }
 .pi-badge { width: calc(var(--u) * 6.8); height: calc(var(--u) * 6.8); right: calc(var(--u) * 2); bottom: calc(var(--u) * 1.5); }
-.dock { max-width: calc(100vw - var(--u) * 16); overflow-x: auto; scrollbar-width: none; }
-.dock::-webkit-scrollbar { display: none; }
-.dk { flex-shrink: 0; font-size: calc(var(--u) * 1.08); }
-.dk:not(.on) span { display: none; }
-.dk.on span { display: inline; }
+.dock {
+  left: calc(var(--u) * 9); right: calc(var(--u) * 9); bottom: calc(var(--u) * 1.8);
+  transform: none; max-width: none; display: grid; grid-template-columns: .7fr 1fr 1.15fr 1.5fr 1fr .7fr 1.1fr 1fr .85fr 1fr 1fr 1fr;
+  gap: calc(var(--u) * .12); padding: calc(var(--u) * .4); border-radius: calc(var(--u) * 1.7);
+  background: rgba(255,255,255,.94);
+}
+.dk {
+  min-width: 0; max-width: none; height: calc(var(--u) * 4.8); padding: calc(var(--u) * .3);
+  flex-direction: column; gap: calc(var(--u) * .3); border-radius: calc(var(--u) * 1.1);
+  font-size: max(8px,calc(var(--u) * .86)); line-height: 1.12; white-space: normal; text-align: center;
+}
+.dk svg { width: calc(var(--u) * 1.6); height: calc(var(--u) * 1.6); }
+.dk span, .dk:not(.on) span { display: block; opacity: 1; }
+/* Reserve space for the always-visible chapter names under the dense AAD diagram. */
+.algo .wrap { --u: min(.9vw,1.2vh); top: calc(var(--u) * 9.2); bottom: calc(var(--u) * 10); left: calc(var(--u) * 10); right: calc(var(--u) * 8.3333); }
 .menu-list ol { gap: calc(var(--u) * .85); }
 .menu-list .t { font-size: calc(var(--u) * 2.5); }
 .menu-foot { flex-wrap: wrap; }

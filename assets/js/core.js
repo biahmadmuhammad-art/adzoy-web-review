@@ -143,7 +143,7 @@ function chromeHTML() {
   return `
   <div class="veil" aria-hidden="true"></div>
   <header class="hdr">
-    <a class="brand" href="index.html" data-href="index.html" aria-label="Adzoy home"><span class="wm-sm">Adz<i data-hex></i>y<sup>™</sup></span></a>
+    <a class="brand" href="index.html" data-href="index.html" aria-label="Adzoy home"><span class="wm-sm">Adz<i data-hex></i>y<sup>™</sup></span><span class="brand-tagline">Treat Today. Control Tomorrow.</span></a>
     <button class="menu-btn" aria-label="Open menu" aria-expanded="false"><span>Menu</span><b>+</b></button>
   </header>
   <nav class="dock" aria-label="Chapters" data-page="${cur || ''}">${dock}</nav>

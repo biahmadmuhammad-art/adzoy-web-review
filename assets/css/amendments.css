@@ -2,6 +2,11 @@
 :root { --lav: #f8f7f5; --lav-2: #eeeae6; --veil-tint: rgba(248,247,245,.88); }
 html, body { background: #f8f7f5; }
 .rotate-hint { background: #f8f7f5; color: var(--plum); }
+.brand { display: inline-flex; flex-direction: column; align-items: flex-start; }
+.brand .wm-sm { line-height: 1; }
+.brand-tagline { display: block; margin-top: calc(var(--u) * .35); font-size: calc(var(--u) * 1.05); font-weight: 650; line-height: 1.2; letter-spacing: .005em; white-space: nowrap; color: #9a218e; }
+/* Both Home scenes already carry the slogan in their main content. */
+.home .brand-tagline { display: none; }
 #mosaic { opacity: .3; }
 .veil { background: rgba(248,247,245,.88); }
 .eyebrow { font-size: calc(var(--u) * 1.75); line-height: 1.35; letter-spacing: .08em; }

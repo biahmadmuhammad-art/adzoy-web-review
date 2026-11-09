@@ -10,6 +10,7 @@ html, body { background: #f8f7f5; }
 #mosaic { opacity: .3; }
 .veil { background: rgba(248,247,245,.88); }
 .eyebrow { font-size: calc(var(--u) * 1.75); line-height: 1.35; letter-spacing: .08em; }
+.goals-page .head .eyebrow { font-size: calc(var(--u) * 3.2); line-height: 1.2; letter-spacing: .035em; margin-bottom: calc(var(--u) * 1); }
 .head h2 { font-size: calc(var(--u) * 4.5); line-height: 1.1; }
 .slogan { color: var(--magenta); font-size: calc(var(--u) * 2.8); line-height: 1.25; font-weight: 750; margin-top: calc(var(--u) * 2); }
 .s-intro .slogan { font-size: calc(var(--u) * 3.6); margin-top: calc(var(--u) * 3); }

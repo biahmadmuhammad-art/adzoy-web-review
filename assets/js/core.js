@@ -480,7 +480,7 @@ function refsHTML(highlight = []) {
 function studyDesignHTML(key) {
   return (DESIGNS[key] || '').replace(/\((\d+)\)/g, (citation, number) => {
     const url = REFS[number];
-    return url ? `<a class="design-ref" href="${url}" target="_blank" rel="noopener" aria-label="Open reference ${number}">${citation}</a>` : citation;
+    return url ? `<button type="button" class="design-ref" data-ref="${number}" aria-label="Show reference ${number}">${citation}</button>` : citation;
   });
 }
 
@@ -488,7 +488,7 @@ const Panel = {
   open: false,
   show(html) {
     $('.panel-body').innerHTML = html;
-    this.returnFocus = document.activeElement;
+    if (!this.open) this.returnFocus = document.activeElement;
     this.open = true; Stops.pause(true);
     $('.panel').setAttribute('aria-hidden', 'false');
     $('.panel-card').scrollTop = 0;

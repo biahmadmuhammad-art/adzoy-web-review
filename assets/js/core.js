@@ -204,13 +204,13 @@ const Wipe = {
   build(covered) {
     this.el = $('.wipe');
     const W = innerWidth, H = innerHeight, s = Math.max(W, H) / 8, h = s * 0.866;
-    const colors = ['#F8F7F5', '#F2F0ED', '#EEEAE6', '#FAF9F7', '#F4F1ED'];
+    const colors = HEX_COLORS;
     let d = '', i = 0;
     for (let r = -1; r * h < H + h; r++) {
       for (let c = -1; c * s < W + s; c++) {
         const x = c * s + (r & 1 ? s / 2 : 0), y = r * h;
-        d += `<path fill="${colors[i++ % 5]}" d="M${x} ${y}L${x + s} ${y}L${x + s / 2} ${y + h}Z"/>`;
-        d += `<path fill="${colors[(i * 3) % 5]}" d="M${x + s / 2} ${y + h}L${x + s * 1.5} ${y + h}L${x + s} ${y}Z"/>`;
+        d += `<path fill="${colors[i++ % colors.length]}" d="M${x} ${y}L${x + s} ${y}L${x + s / 2} ${y + h}Z"/>`;
+        d += `<path fill="${colors[i++ % colors.length]}" d="M${x + s / 2} ${y + h}L${x + s * 1.5} ${y + h}L${x + s} ${y}Z"/>`;
       }
     }
     this.el.innerHTML = `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none">${d}</svg>`;

@@ -1,0 +1,34 @@
+.s-intro {
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr);
+  align-items: center;
+  justify-items: stretch;
+  place-content: normal;
+  gap: calc(var(--u) * 3);
+  padding: calc(var(--u) * 7) calc(var(--u) * 9) calc(var(--u) * 12);
+  text-align: left;
+}
+.intro-copy { min-width: 0; }
+.intro-copy .wordmark { font-size: calc(var(--u) * 11.5); }
+.intro-copy .slogan { font-size: calc(var(--u) * 3.1); line-height: 1.28; margin-top: calc(var(--u) * 2.4); }
+.intro-copy .slogan span { display: block; }
+.intro-copy .intro-sub { max-width: 28em; font-size: calc(var(--u) * 1.8); line-height: 1.6; margin-top: calc(var(--u) * 2); }
+.intro-copy .hint { position: static; transform: none; align-items: flex-start; margin-top: calc(var(--u) * 3.5); font-size: calc(var(--u) * 1.15); }
+.intro-copy .hint i { height: calc(var(--u) * 2.8); margin-left: calc(var(--u) * .6); }
+.intro-media { width: min(100%, calc(var(--u) * 37)); justify-self: center; }
+.intro-video-surface {
+  background: #f8f7f5;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 97%, transparent), linear-gradient(180deg, transparent, #000 2.3%, #000 97.5%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 4%, #000 97%, transparent), linear-gradient(180deg, transparent, #000 2.3%, #000 97.5%, transparent);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+}
+.intro-video { display: block; width: 100%; height: auto; aspect-ratio: 708 / 900; object-fit: contain; mix-blend-mode: multiply; filter: brightness(1.075); pointer-events: none; }
+.intro-video-controls { display: flex; justify-content: center; gap: calc(var(--u) * 1.4); margin-top: calc(var(--u) * 1.1); }
+.intro-video-controls button { display: inline-flex; align-items: center; gap: .55em; min-height: 34px; padding: .5em .8em; border-radius: 99px; font-size: max(11px, calc(var(--u) * 1.2)); color: var(--purple); background: rgba(248,247,245,.7); }
+.intro-video-controls button:hover { background: #eee8ef; }
+.intro-video-controls button:focus-visible { outline: 2px solid var(--magenta); outline-offset: 3px; }
+.intro-video-controls svg { width: 1.25em; height: 1.25em; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.intro-video-controls .play-symbol { fill: currentColor; stroke: none; }
+.intro-video-controls .pause-symbol, .intro-video-controls .sound-on-symbol { display: none; }
+.intro-play.is-playing .pause-symbol, .intro-sound[aria-pressed="true"] .sound-on-symbol { display: block; }
+.intro-play.is-playing .play-symbol, .intro-sound[aria-pressed="true"] .sound-off-symbol { display: none; }

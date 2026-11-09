@@ -13,13 +13,17 @@ function introTimeline() {
   const tl = gsap.timeline({ delay: 0.15 });
   tl.add(Wipe.reveal(), 0)
     .to(M, { reveal: 1, duration: 2.2, ease: 'power2.out' }, 0.2)
-    .from('.s-intro .wordmark .tri', {
+    .fromTo('.s-intro .wordmark .tri', {
       x: () => gsap.utils.random(-140, 140), y: () => gsap.utils.random(-140, 140),
       rotation: () => gsap.utils.random(-180, 180), scale: 0.2, autoAlpha: 0,
+      svgOrigin: '43.3 50', smoothOrigin: false,
+    }, {
+      x: 0, y: 0, rotation: 0, scale: 1, autoAlpha: 1,
       duration: 1.1, stagger: 0.07, ease: 'power3.out',
     }, 0.55)
     .from('.s-intro .wm-letter', { yPercent: 110, duration: 0.9, stagger: 0.07, ease: 'power4.out' }, 0.9)
     .from('.s-intro .wordmark sup, .s-intro .intro-sub, .s-intro .hint, .s-intro .slogan', { autoAlpha: 0, y: 18, duration: 0.7, stagger: 0.1 }, 1.4)
+    .from('.s-intro .intro-media', { autoAlpha: 0, x: 24, duration: 1.1, ease: 'power2.out' }, 0.7)
     .from('.hdr .menu-btn, .pager, .pi-badge', { autoAlpha: 0, duration: 0.8, stagger: 0.1 }, 1.6);
   return tl;
 }
@@ -33,6 +37,7 @@ function masterTimeline() {
   let t = AT[0];
   const actWords = splitWords('.s-actives h2');
   tl.to('.s-intro .wordmark', { yPercent: -35, scale: 0.6, autoAlpha: 0, duration: 0.8, ease: 'power3.in' }, t)
+    .to('.s-intro .intro-media', { autoAlpha: 0, x: 24, duration: 0.45, ease: 'power2.in' }, t)
     .to('.s-intro .intro-sub, .s-intro .hint, .s-intro .slogan', { autoAlpha: 0, y: -16, duration: 0.4, ease: 'power2.in' }, t)
     .to(M, { shift: 1, duration: DUR[0], ease: 'power2.inOut' }, t)
     .to('.veil', { autoAlpha: 1, duration: 0.9, ease: 'none' }, t + 0.3)
@@ -53,12 +58,51 @@ function idle() {
   gsap.to('.hint i', { y: 8, duration: 0.9, ease: 'sine.inOut', yoyo: true, repeat: -1 });
 }
 
+function initIntroVideo() {
+  const video = $('.intro-video');
+  if (!video) return;
+  const play = $('.intro-play'), sound = $('.intro-sound');
+  let userPaused = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let playerVisible = !window.CLM_SLIDE || document.documentElement.dataset.clmVisible === 'true';
+  video.muted = true;
+  const update = () => {
+    play.classList.toggle('is-playing', !video.paused);
+    play.setAttribute('aria-label', video.paused ? 'Play video' : 'Pause video');
+    $('span', play).textContent = video.paused ? 'Play' : 'Pause';
+    sound.setAttribute('aria-pressed', String(!video.muted));
+    sound.setAttribute('aria-label', video.muted ? 'Unmute video' : 'Mute video');
+    $('span', sound).textContent = video.muted ? 'Sound on' : 'Sound off';
+  };
+  const sync = () => {
+    const active = Stops.names[Stops.cur] === 'intro' && playerVisible && !document.hidden && !Menu.open && !Panel.open;
+    if (!active || userPaused) video.pause();
+    else video.play().catch(update);
+    update();
+  };
+  play.addEventListener('click', () => { userPaused = !video.paused; sync(); });
+  sound.addEventListener('click', () => { video.muted = !video.muted; sync(); });
+  $('.intro-video-controls').addEventListener('keydown', event => {
+    if (event.key === ' ') event.stopPropagation();
+  });
+  ['play', 'pause', 'volumechange'].forEach(event => video.addEventListener(event, update));
+  document.addEventListener('stop', sync);
+  document.addEventListener('visibilitychange', sync);
+  document.addEventListener('clmvisibility', event => { playerVisible = event.detail.visible; sync(); });
+  addEventListener('pagehide', () => video.pause());
+  addEventListener('pageshow', sync);
+  const overlays = new MutationObserver(sync);
+  overlays.observe($('.panel'), { attributes: true, attributeFilter: ['aria-hidden'] });
+  overlays.observe(document.body, { attributes: true, attributeFilter: ['class'] });
+  sync();
+}
+
 (async function () {
   coreInit();
   Mosaic.init($('#mosaic'));
   await document.fonts.ready;
   const tl = masterTimeline();
   Stops.init(tl, STOPS);
+  initIntroVideo();
   if (Stops.cur === 0) {
     Stops.busy = true;
     introTimeline().eventCallback('onComplete', () => { Stops.busy = false; });

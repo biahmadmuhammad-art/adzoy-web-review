@@ -9,6 +9,7 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 87 100%22%3E%3Cpath fill=%22%23A33B9E%22 d=%22M43 0L87 25V75L43 100L0 75V25Z%22/%3E%3C/svg%3E">
   <link rel="stylesheet" href="assets/css/main.css?v=90">
   <link rel="stylesheet" href="assets/css/amendments.css?v=86">
+  <link rel="stylesheet" href="assets/css/intro.css?v=96">
 </head>
 <body class="home" data-next="prevalence.html" data-next-label="Acne prevalence">
 
@@ -18,12 +19,25 @@
   <main class="stage">
 
     <section class="scene s-intro" data-scene="intro">
+      <div class="intro-copy">
       <h1 class="wordmark" aria-label="Adzoy">
         <span class="wm-mask"><span class="wm-letter" style="--o:0">A</span></span><span class="wm-mask"><span class="wm-letter" style="--o:.72">d</span></span><span class="wm-mask"><span class="wm-letter" style="--o:1.4">z</span></span><i data-hex></i><span class="wm-mask"><span class="wm-letter" style="--o:2.75">y</span></span><sup>™</sup>
       </h1>
-      <p class="slogan">Treat Today. Control Tomorrow.</p>
+      <p class="slogan"><span>Treat Today.</span> <span>Control Tomorrow.</span></p>
       <p class="intro-sub"><span>Adapalene 0.1% or 0.3% + Benzoyl Peroxide 2.5%</span><strong>Gel</strong></p>
       <p class="hint">Scroll to begin<i></i></p>
+      </div>
+      <div class="intro-media">
+        <div class="intro-video-surface">
+          <video class="intro-video" width="708" height="900" muted loop playsinline preload="metadata" poster="assets/video/adzoy-intro-poster.webp" aria-label="Adzoy product video">
+            <source src="assets/video/adzoy-intro.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="intro-video-controls" data-noswipe>
+          <button type="button" class="intro-play" aria-label="Play video"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="play-symbol" d="M8 5l11 7-11 7z"/><path class="pause-symbol" d="M8 5v14M16 5v14"/></svg><span>Play</span></button>
+          <button type="button" class="intro-sound" aria-label="Unmute video" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5L6 9H3v6h3l5 4z"/><path class="sound-off-symbol" d="M16 9l5 6m0-6l-5 6"/><path class="sound-on-symbol" d="M16 8a6 6 0 010 8m3-11a10 10 0 010 14"/></svg><span>Sound on</span></button>
+        </div>
+      </div>
     </section>
 
     <section class="scene s-actives" data-scene="actives">
@@ -55,7 +69,7 @@
   <script src="assets/js/refs.js?v=94"></script>
   <script src="assets/js/charts.js?v=80"></script>
   <script src="assets/js/core.js?v=95"></script>
-  <script src="assets/js/home.js?v=80"></script>
+  <script src="assets/js/home.js?v=96"></script>
   <script src="assets/js/amendments.js?v=80"></script>
 </body>
 </html>

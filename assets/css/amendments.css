@@ -135,6 +135,7 @@ html, body { background: #f8f7f5; }
 .study-glance .cap-s { font-size: calc(var(--u) * 1.3); }
 .study-glance .datagrid { grid-template-columns: repeat(3,1fr); margin-top: calc(var(--u) * .7); }
 .study-glance .datagrid > div { display: block; padding: calc(var(--u) * .75); }
+.diary [data-stop="study-3"] .study-glance .datagrid > div { padding-block: calc(var(--u) * .35); }
 .study-glance .datagrid .gi { display: none; }
 .study-glance .datagrid small { font-size: calc(var(--u) * 1); letter-spacing: .04em; opacity: .7; margin-bottom: .2em; }
 .study-glance .datagrid b { display: block; font-size: calc(var(--u) * 1.2); line-height: 1.3; }

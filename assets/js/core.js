@@ -477,6 +477,13 @@ function refsHTML(highlight = []) {
   return `<p class="eyebrow">Adzoy™ Gel E-Detailer</p><h3>References</h3><ol class="refs">${rows}</ol>`;
 }
 
+function studyDesignHTML(key) {
+  return (DESIGNS[key] || '').replace(/\((\d+)\)/g, (citation, number) => {
+    const url = REFS[number];
+    return url ? `<a class="design-ref" href="${url}" target="_blank" rel="noopener" aria-label="Open reference ${number}">${citation}</a>` : citation;
+  });
+}
+
 const Panel = {
   open: false,
   show(html) {
@@ -508,7 +515,7 @@ const Panel = {
       const open = (html) => (Menu.open ? Menu.hide(() => this.show(html)) : this.show(html));
       if (sup) open(refsHTML(sup.dataset.ref.split(',').map((n) => +n)));
       else if (detail) open(document.getElementById(detail.dataset.detail).innerHTML);
-      else if (d) open(`<p class="eyebrow">${d.dataset.title || 'Clinical study'}</p><h3>Study design</h3><p class="design">${DESIGNS[d.dataset.design]}</p>`);
+      else if (d) open(`<p class="eyebrow">${d.dataset.title || 'Clinical study'}</p><h3>Study design</h3><p class="design">${studyDesignHTML(d.dataset.design)}</p>`);
       else if (p.dataset.panel === 'refs') open(refsHTML());
       else open(PI_HTML);
     });

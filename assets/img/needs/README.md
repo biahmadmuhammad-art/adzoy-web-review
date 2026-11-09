@@ -1,5 +1,40 @@
 # Unmet Needs image assets
 
+## November 2026 — original Adzoy packaging
+
+The last three scroll states now use the unchanged transparent product artwork from `../packs/adzoy-01.png` and `../packs/adzoy-03.png` as responsive HTML image layers. Branding, ingredients and strengths are preserved exactly. Original generic-tube illustrations below are archival and no longer loaded by the page. Backgrounds were edited with the built-in ImageGen tool (edit mode), then copied into this directory.
+
+### daily-routine-background
+
+Saved asset: [daily-routine-background.png](daily-routine-background.png)
+
+Edit source: `D:/WorkingFiles/Clue/2026/adzoy/edetailer-review/assets/img/needs/daily-routine.png`
+
+Final prompt:
+
+Edit this existing editorial bathroom still life into a clean backdrop for placing a real product carton later in the website. Remove ONLY the unbranded white squeeze tube and lavender cap in the centre, including its cast shadow and any reflection. Seamlessly reconstruct the ivory stone counter and warm wall behind it. Keep the exact clock, glowing crescent moon lamp, folded towel, glass jar, mirror, flowers, colors and lighting. Keep the center-left product placement area empty and unobstructed. No replacement package, tube, box, bottle, text or logo. Keep the original portrait 4:5 framing and photorealistic quality.
+
+### flexibility-background
+
+Saved asset: [flexibility-background.png](flexibility-background.png)
+
+Edit source: `D:/WorkingFiles/Clue/2026/adzoy/edetailer-review/assets/img/needs/flexibility.png`
+
+Final prompt:
+
+Edit this existing pale ivory and lavender product still life into a clean background for two real product cartons to be placed later in the website. Remove BOTH unbranded white squeeze tubes with their blue and pink caps. Also remove the two raised stone display cylinders and seamlessly continue the flat ivory stone tabletop underneath, leaving a clean open tabletop across the middle and foreground for two cartons to stand. Keep the soft lavender ribbon in the background, the peripheral leaves, glassware and flowers, warm ivory/lavender colors and soft directional light. The centre must be empty with no ghost silhouettes, no remaining tube parts, no boxes, no labels or text. Keep the original portrait 4:5 framing and polished photorealistic material quality.
+
+### oral-therapy-background
+
+Saved asset: [oral-therapy-background.png](oral-therapy-background.png)
+
+Edit source: `D:/WorkingFiles/Clue/2026/adzoy/edetailer-review/assets/img/needs/oral-therapy.png`
+
+Final prompt:
+
+Edit this existing topical-and-oral-therapy still life into a clean backdrop for adding a real Adzoy carton separately in the website. Remove ONLY the large unbranded white squeeze tube and blue cap on the left, including its shadow/reflection, and seamlessly reconstruct the ivory stone platform and pale background behind it. Keep the recognizable silver blister of three lavender-and-white capsules on the right exactly as it is, along with the stone platform, mortar, flowers, glassware, soft lavender arc, lighting, colors and portrait 4:5 composition. Leave the left/centre-left placement area empty. Do not add any replacement package, tube, text, logos or loose capsules.
+
+
 Generated with the built-in ImageGen tool for the six scroll states. Each image is an editorial illustration, not a study result. The original generated PNGs are preserved in this directory.
 
 ## tolerability

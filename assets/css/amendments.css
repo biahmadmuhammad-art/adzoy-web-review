@@ -56,6 +56,8 @@ html, body { background: #f8f7f5; }
 .guideline-heading h2 { font-size: calc(var(--u) * 3.5); }
 .guideline-subtitle { font-size: calc(var(--u) * 2); margin-top: .45em; }
 .guideline-logo { width: calc(var(--u) * 16); height: calc(var(--u) * 8); object-fit: contain; flex-shrink: 0; }
+.guideline-heading .nice-logo { width: calc(var(--u) * 35); height: auto; }
+[data-stop="nice"] .nice-grid .num { color: #8d7699; opacity: .65; }
 .guideline-logo:not(.nice-logo) { width: calc(var(--u) * 18); height: calc(var(--u) * 9); object-fit: cover; }
 .nice-logo { width: calc(var(--u) * 13); height: calc(var(--u) * 5); }
 .aad-recommendations .head { margin-bottom: calc(var(--u) * 1.7); }
@@ -95,6 +97,7 @@ html, body { background: #f8f7f5; }
 .s-photo .fb.no { color: #9a294b; }
 .s-photo .cta.light { color: white; background: var(--plum); }
 .s-present h2, .diary .s-present .paper h2 { font-size: calc(var(--u) * 3.8); }
+.s-present .patient-summary { font-size: calc(var(--u) * 1.7); line-height: 1.4; margin: calc(var(--u) * -1) 0 calc(var(--u) * 2.4); color: #75677d; }
 .history-btn { margin-top: calc(var(--u) * 1.7); }
 .history-detail { padding-left: 1.25em; font-size: calc(var(--u) * 1.8); line-height: 1.6; }
 .history-detail li + li { margin-top: 1em; }

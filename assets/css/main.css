@@ -376,6 +376,8 @@ h2 { font-weight: 700; letter-spacing: -.03em; line-height: 1.02; }
 .placeholder { border: 1.5px dashed rgba(43, 23, 56, .3); border-radius: 14px; padding: 1.2em 1.4em; font-size: calc(var(--u) * 1.6); line-height: 1.55; }
 .placeholder ul { margin: .6em 0 0 1.2em; }
 .design { font-size: calc(var(--u) * 1.75); line-height: 1.6; }
+.design-ref { color: var(--accent); font-weight: 700; text-decoration: underline; text-underline-offset: .15em; }
+.design-ref:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; border-radius: 2px; }
 /* Abbreviated prescribing information (from the approved package leaflets) */
 .pi-doc { font-size: calc(var(--u) * 1.45); line-height: 1.5; }
 .pi-doc h4 { margin: 1.3em 0 .4em; font-size: calc(var(--u) * 1.25); font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); }

@@ -20,15 +20,9 @@
 .needs-picture { position: absolute; inset: 0; margin: 0; visibility: hidden; opacity: 0; }
 .needs-picture.is-active { visibility: visible; opacity: 1; }
 .needs-picture img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
-/* Keep the original product artwork intact and fully visible over the edited still-life backgrounds. */
-.needs-product-picture .needs-backdrop { object-position: center 63%; }
-.needs-product-packs { position: absolute; z-index: 1; inset: 13% 16% 26%; display: flex; align-items: flex-end; justify-content: center; gap: 5%; }
-.needs-product-packs .needs-pack { height: 100%; width: auto; max-width: 100%; min-width: 0; flex: 0 1 auto; object-fit: contain; object-position: center bottom; filter: drop-shadow(8px 12px 9px #4d3a4933); }
-.need-daily .needs-product-packs { inset: 20% 33% 26% 20%; }
-.need-flexibility .needs-product-packs { inset: 12% 12% 24%; gap: 8%; }
-.need-flexibility .needs-pack { max-width: 46%; }
-.need-flexibility .needs-pack-03 { height: 92%; }
-.need-oral .needs-product-packs { inset: 12% 48% 24% 16%; }
+/* Retouched still lifes keep carton lighting, surface contact and shadows in one image. */
+.needs-product-picture img { object-position: center 56%; }
+.need-flexibility img { object-position: 54% 56%; }
 .needs-visual::after { content: ''; position: absolute; inset: 45% 0 0; background: linear-gradient(transparent,rgba(36,20,43,.65)); pointer-events: none; z-index: 2; }
 .needs-caption { position: absolute; bottom: calc(var(--u) * 2.1); left: calc(var(--u) * 2.4); right: calc(var(--u) * 2.4); z-index: 3; color: #fff; pointer-events: none; }
 .needs-count { font-size: calc(var(--u) * 1.05); letter-spacing: .16em; opacity: .85; font-weight: 700; }

@@ -1,8 +1,18 @@
 # Unmet Needs image assets
 
+## 9 November 2026 — integrated product photography
+
+The three product states now use retouched, single-image compositions made with the built-in ImageGen tool (edit/compositing mode), using the real pink 0.1%/2.5% and blue 0.3%/2.5% Adzoy packshots as references. Product lighting, warm stone bounce, contact shadows and reflections are integrated into each scene instead of using separate floating HTML pack layers.
+
+- [daily-routine-integrated.png](daily-routine-integrated.png)
+- [flexibility-integrated.png](flexibility-integrated.png)
+- [oral-therapy-integrated.png](oral-therapy-integrated.png)
+
+Exact final prompts and source image paths: [retouch-prompts.json](retouch-prompts.json). The original packshots and previous backgrounds remain archived unchanged. Only the three new compositions are loaded for these product states.
+
 ## November 2026 — original Adzoy packaging
 
-The last three scroll states now use the unchanged transparent product artwork from `../packs/adzoy-01.png` and `../packs/adzoy-03.png` as responsive HTML image layers. Branding, ingredients and strengths are preserved exactly. Original generic-tube illustrations below are archival and no longer loaded by the page. Backgrounds were edited with the built-in ImageGen tool (edit mode), then copied into this directory.
+The previous implementation used the unchanged transparent product artwork from `../packs/adzoy-01.png` and `../packs/adzoy-03.png` as responsive HTML image layers. Branding, ingredients and strengths were preserved exactly. These separate layers and backgrounds have been superseded by the integrated compositions above. Original generic-tube illustrations below are also archival and no longer loaded by the page. Backgrounds were edited with the built-in ImageGen tool (edit mode), then copied into this directory.
 
 ### daily-routine-background
 

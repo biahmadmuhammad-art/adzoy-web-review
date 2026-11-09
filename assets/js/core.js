@@ -30,7 +30,7 @@ const CHAPTERS = [
   { key: 'goals', href: 'treatment-goals.html', n: '05', title: 'Treatment Objectives', short: 'Goals', icon: 'target', img: 'assets/img/menu/treatment.jpg?v=2' },
   { key: 'needs', href: 'unmet-needs.html', n: '06', title: 'Unmet Needs', short: 'Unmet needs', icon: 'layers', img: 'assets/img/menu/treatment.jpg?v=2' },
   { key: 'guidelines', href: 'guidelines.html', n: '07', title: 'Treatment Guidelines', short: 'Guidelines', icon: 'clipboard', img: 'assets/img/menu/treatment.jpg?v=2' },
-  { key: 'patients', href: 'patients.html', n: '08', title: 'Patient Profiles & Clinical Studies', short: 'Patients', icon: 'people', img: 'assets/img/content/patients-group-pronounced.png' },
+  { key: 'patients', href: 'patients.html', n: '08', title: 'Patient Profiles & Clinical Studies', short: 'Patients', icon: 'people', img: 'assets/img/content/patients-group-balanced.png' },
   { key: 'howto', href: 'how-to-use.html', n: '09', title: 'How to Use Adzoy™ Gel', short: 'How to use', icon: 'tube', img: 'assets/img/menu/how-to-use.jpg?v=2' },
   { key: 'why', href: 'why-adzoy.html', n: '10', title: 'Why Adzoy™ Gel?', short: 'Why Adzoy', icon: 'shield', img: 'assets/img/menu/why.jpg' },
   { key: 'references', href: 'references.html', n: '11', title: 'References', short: 'References', icon: 'book', img: 'assets/img/menu/treatment.jpg?v=2' },

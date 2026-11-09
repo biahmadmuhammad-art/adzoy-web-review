@@ -13,6 +13,7 @@ html, body { background: #f8f7f5; }
 .head h2 { font-size: calc(var(--u) * 4.5); line-height: 1.1; }
 .slogan { color: var(--magenta); font-size: calc(var(--u) * 2.8); line-height: 1.25; font-weight: 750; margin-top: calc(var(--u) * 2); }
 .s-intro .slogan { font-size: calc(var(--u) * 3.6); margin-top: calc(var(--u) * 3); }
+.s-intro .intro-sub strong { display: block; margin-top: calc(var(--u) * .6); }
 .s-actives .prominent { font-size: calc(var(--u) * 2.45); max-width: 24em; }
 .s-actives h2 { font-size: calc(var(--u) * 5.6); margin-block: calc(var(--u) * 1.6); }
 .s-actives .chips { margin-top: calc(var(--u) * 1.8); }

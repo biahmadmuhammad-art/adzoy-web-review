@@ -16,6 +16,8 @@ html, body { background: #f8f7f5; }
 .s-actives .prominent { font-size: calc(var(--u) * 2.45); max-width: 24em; }
 .s-actives h2 { font-size: calc(var(--u) * 5.6); margin-block: calc(var(--u) * 1.6); }
 .s-actives .chips { margin-top: calc(var(--u) * 1.8); }
+.s-actives .col-packs .slogan { position: absolute; top: calc(var(--u) * 2); left: 0; right: 0; margin: 0; font-size: calc(var(--u) * 2.4); text-align: center; }
+.s-actives .col-packs .slogan span { display: inline-block; }
 .hint { bottom: calc(var(--u) * 9); }
 .pi-badge { width: calc(var(--u) * 6.8); height: calc(var(--u) * 6.8); right: calc(var(--u) * 2); bottom: calc(var(--u) * 1.5); }
 .dock {

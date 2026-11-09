@@ -204,7 +204,8 @@ const Wipe = {
   build(covered) {
     this.el = $('.wipe');
     const W = innerWidth, H = innerHeight, s = Math.max(W, H) / 8, h = s * 0.866;
-    const colors = HEX_COLORS;
+    // Soften the logo hues with the light page background while keeping the wipe opaque.
+    const colors = HEX_COLORS.map(color => gsap.utils.interpolate(color, '#F8F7F5', 0.6));
     let d = '', i = 0;
     for (let r = -1; r * h < H + h; r++) {
       for (let c = -1; c * s < W + s; c++) {

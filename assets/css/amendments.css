@@ -98,6 +98,14 @@ html, body { background: #f8f7f5; }
 .s-photo .cta.light { color: white; background: var(--plum); }
 .s-present h2, .diary .s-present .paper h2 { font-size: calc(var(--u) * 3.8); }
 .s-present .patient-summary { font-size: calc(var(--u) * 1.7); line-height: 1.4; margin: calc(var(--u) * -1) 0 calc(var(--u) * 2.4); color: #75677d; }
+.diary .s-present .wrap { grid-template-columns: 1.1fr .9fr; }
+.diary .s-present .paper { padding-top: calc(var(--u) * 2); padding-bottom: calc(var(--u) * 2); }
+.diary .s-present .facts-list { gap: calc(var(--u) * 1.2); }
+.diary .s-present .patient-summary { margin-bottom: calc(var(--u) * 1.7); }
+@media (max-aspect-ratio: 3/2) {
+  .diary .s-present .wrap { grid-template-columns: 1.2fr .8fr; gap: calc(var(--u) * 3); }
+  .diary .s-present .face-frame { width: min(calc(var(--u) * 34), 100%); }
+}
 .history-btn { margin-top: calc(var(--u) * 1.7); }
 .history-detail { padding-left: 1.25em; font-size: calc(var(--u) * 1.8); line-height: 1.6; }
 .history-detail li + li { margin-top: 1em; }
